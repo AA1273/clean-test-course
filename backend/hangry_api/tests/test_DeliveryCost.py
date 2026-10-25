@@ -41,4 +41,8 @@ def test_LittleItems():
   #Act
   cost = Delivery.calculate(order,delivery_distance)
   #Assert
+<<<<<<< HEAD
   assert cost == 2.51
+=======
+  assert cost == 2.50
+>>>>>>> 9e94e66 (added and automated unit tests)
