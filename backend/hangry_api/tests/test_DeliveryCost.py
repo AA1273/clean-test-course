@@ -1,6 +1,11 @@
 from api.controllers import Delivery
 from django_mock_queries.query import MockSet, MockModel
 
+import os
+print("DEBUG importing test_DeliveryCost from:", __file__)
+print("DEBUG cwd:", os.getcwd())
+
+
 def test_LotsOfItems():
   #Arrange
   order = MockSet()
@@ -25,11 +30,15 @@ def test_MiddleOfTheRoadItems():
   #Assert
   assert cost == 5
 
+
 def test_LittleItems():
+  raise Exception("DEBUG: running LittleItems")
   #Arrange
-  # TODO: Arrange the items to run the test
+  order = MockSet()
+  order.add(MockModel(quantity=3))
+  order.add(MockModel(quantity=1))
+  delivery_distance = 2
   #Act
-  # TODO: Call the function that will be tested
+  cost = Delivery.calculate(order,delivery_distance)
   #Assert
-  # TODO: replace the pass with an assert to test the value returned.
-  pass
+  assert cost == 2.51
