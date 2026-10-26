@@ -32,7 +32,6 @@ def test_MiddleOfTheRoadItems():
 
 
 def test_LittleItems():
-  raise Exception("DEBUG: running LittleItems")
   #Arrange
   order = MockSet()
   order.add(MockModel(quantity=3))
@@ -41,8 +40,5 @@ def test_LittleItems():
   #Act
   cost = Delivery.calculate(order,delivery_distance)
   #Assert
-<<<<<<< HEAD
-  assert cost == 2.51
-=======
   assert cost == 2.50
->>>>>>> 9e94e66 (added and automated unit tests)
+
